@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: payments-front
+  labels:
+    k8s-namespace: payments-front
