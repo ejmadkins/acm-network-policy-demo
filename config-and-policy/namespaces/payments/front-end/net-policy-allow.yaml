@@ -1,7 +1,7 @@
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: nginx-nginx2
+  name: nginx-nginx2-ingress
 spec:
   podSelector:
     matchLabels:
@@ -11,21 +11,17 @@ spec:
     - podSelector:
         matchLabels:
           app: nginx2
-    ports:
-      - port: 80
 ---
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: nginx-nginx-return
+  name: nginx2-nginx-egress
 spec:
   podSelector:
     matchLabels:
-      app: nginx
+      app: nginx2
   egress:
   - to:
     - podSelector:
         matchLabels:
-          app: nginx2
-    ports:
-    - port: 80
+          app: nginx
