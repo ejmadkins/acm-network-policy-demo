@@ -21,11 +21,9 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: nginx2
+      app: nginx
   egress:
   - to:
     - podSelector:
         matchLabels:
           app: nginx2
-    ports:
-    - port: 80
