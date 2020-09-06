@@ -11,6 +11,8 @@ spec:
     - podSelector:
         matchLabels:
           app: nginx2
+    ports:
+    - port: 80
 ---
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
@@ -24,4 +26,6 @@ spec:
   - to:
     - podSelector:
         matchLabels:
-          app: nginx
+          app: nginx2
+    ports:
+    - port: 80
