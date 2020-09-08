@@ -16,5 +16,5 @@ spec:
         app: db
     spec:
       containers:
-      - image: nginx
+      - image: ejmadkins/names:0.0.1
         name: nginx
